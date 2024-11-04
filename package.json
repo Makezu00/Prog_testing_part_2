@@ -1,0 +1,19 @@
+{
+  "name": "prog_testing_part_2",
+  "version": "1.0.0",
+  "description": "Course project",
+  "main": "camelCase.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Makezu00/Prog_testing_part_2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Makezu00/Prog_testing_part_2/issues"
+  },
+  "homepage": "https://github.com/Makezu00/Prog_testing_part_2#readme"
+}

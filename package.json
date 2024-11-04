@@ -4,7 +4,8 @@
   "description": "Course project",
   "main": "camelCase.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jest-w": "jest --watch",
+    "test-coverage": "nyc npm test && nyc report --reporter=text-lcov"}
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Makezu00/Prog_testing_part_2/issues"
   },
-  "homepage": "https://github.com/Makezu00/Prog_testing_part_2#readme"
+  "homepage": "https://github.com/Makezu00/Prog_testing_part_2#readme",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
 }

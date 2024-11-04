@@ -5,7 +5,7 @@
   "main": "camelCase.js",
   "scripts": {
     "jest-w": "jest --watch",
-    "test-coverage": "nyc npm test && nyc report --reporter=text-lcov"
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov"
   },
   "repository": {
     "type": "git",

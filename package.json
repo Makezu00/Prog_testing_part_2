@@ -4,6 +4,7 @@
   "description": "Course project",
   "main": "camelCase.js",
   "scripts": {
+    "test": "jest",
     "jest-w": "jest --watch",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov"
   },

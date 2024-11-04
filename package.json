@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Makezu00/Prog_testing_part_2#readme",
   "dependencies": {
     "jest": "^29.7.0",
+    "lcov": "^1.16.0",
     "nyc": "^17.1.0"
   }
 }

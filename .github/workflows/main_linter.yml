@@ -30,6 +30,8 @@ jobs:
     # finally run the tests
     #- run: npm run coverage
 
+    - run: npx jest --coverage
+
     # Save coverage report in Coveralls
     - name: Coveralls
       uses: coverallsapp/github-action@master

@@ -27,9 +27,7 @@ jobs:
     - run: npm test
     # build the project if necessary
     - run: npm run build --if-present
-    # finally run the tests
-    - run: npx jest --coverage
-
+    # write the coverage file
     - run: npx jest --coverage
 
     # Save coverage report in Coveralls

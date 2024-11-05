@@ -23,10 +23,12 @@ jobs:
         node-version: 14.21.3
     # install dependencies using clean install to avoid package lock updates
     - run: npm ci
+    # Run tests and generate the lcov.info file
+    - run: npm test
     # build the project if necessary
     - run: npm run build --if-present
     # finally run the tests
-    - run: npm run coverage
+    #- run: npm run coverage
 
     # Save coverage report in Coveralls
     - name: Coveralls

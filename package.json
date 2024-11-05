@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "jest-w": "jest --watch",
-    "coverage": "nyc npm test"
+    "coverage": "nyc npm test",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,12 @@
   "homepage": "https://github.com/Makezu00/Prog_testing_part_2#readme",
   "dependencies": {
     "coverage": "^0.4.1",
-    "coveralls": "^3.1.1",
     "jest": "^29.7.0",
     "lcov": "^1.16.0",
     "lcov-parse": "^1.0.0",
     "nyc": "^17.1.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.1.1"
   }
 }

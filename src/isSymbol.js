@@ -20,4 +20,4 @@ function isSymbol(value) {
   return type == 'symbol' || (type === 'object' && value != null && getTag(value) == '[object Symbol]')
 }
 
-export default isSymbol
+module.exports = isSymbol;

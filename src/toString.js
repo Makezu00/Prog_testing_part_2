@@ -39,4 +39,4 @@ function toString(value) {
   return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result
 }
 
-export default toString
+module.exports = toString;

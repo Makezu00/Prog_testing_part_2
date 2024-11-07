@@ -33,6 +33,7 @@ the individual elements will be inspected.
 The file isEmpty.js is tested by giving it objects of different types giving each object type a true
 and a false case.
 
+
 The file map.js is tested by simply comparing generated outputs with expected outputs.
 
 The file memoize.js is tested by asserting the values in the cache with a map that has the
@@ -46,3 +47,10 @@ The file toNumber.js is tested by giving the function different types of objects
 cannot be presented as a number will be tested.
 
 The file toString.js is tested by using the same principle as with toNumber.js file.
+
+
+un-fuck npm dependency hell:
+
+rm -rf node_modules && npm cache clean --force
+rm package-lock.json
+npm install

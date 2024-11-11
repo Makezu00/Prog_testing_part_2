@@ -1,0 +1,1 @@
+const every = require('../src/every');

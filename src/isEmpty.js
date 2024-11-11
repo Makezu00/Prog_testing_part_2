@@ -66,4 +66,4 @@ function isEmpty(value) {
   return true
 }
 
-export default isEmpty
+module.exports = isEmpty;

@@ -1,2 +1,2 @@
-const countBy = require('../countBy');
+const countBy = require('../src/countBy');
 

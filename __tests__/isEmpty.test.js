@@ -1,7 +1,11 @@
 const isEmpty = require('../src/isEmpty');
 
-/**Testing with an empty object */
 test('Happy cases', () => {
-    const c = null;
-    expect(isEmpty(c)).toBeTruthy();
+    expect(isEmpty(null)).toBeTruthy();
+    expect(isEmpty([])).toBeTruthy();
+    expect(isEmpty(1)).toBeTruthy();
+    expect(isEmpty(true)).toBeTruthy();
+    expect(isEmpty('aasdasdasd')).toBeFalsy();
+    expect(isEmpty([2,2,4,5])).toBeFalsy();
+    expect(isEmpty({'asdasd' : 2245})).toBeFalsy();
 });

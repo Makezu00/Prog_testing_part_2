@@ -62,4 +62,4 @@ function toNumber(value) {
     : (reIsBadHex.test(value) ? NAN : +value)
 }
 
-export default toNumber
+module.exports = toNumber;

@@ -27,4 +27,4 @@ function map(array, iteratee) {
   return result
 }
 
-export default map
+module.exports = map;

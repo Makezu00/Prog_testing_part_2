@@ -43,4 +43,4 @@ function slice(array, start, end) {
   return result
 }
 
-export default slice
+module.exports = slice;

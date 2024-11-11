@@ -61,4 +61,4 @@ function memoize(func, resolver) {
 
 memoize.Cache = Map
 
-export default memoize
+module.exports = memoize;

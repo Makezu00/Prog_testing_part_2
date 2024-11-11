@@ -1,19 +1,21 @@
 Libraries to be tested:
 
 Markus:
-  - CountBy.js
-  - reduce.js
-  - every.js
-  - filter.js
-  - isEmpty.js
+
+    CountBy.js
+    reduce.js
+    every.js
+    filter.js
+    isEmpty.js
 
 Pyry:
-  - map.js
-  - memorize.js
-  - slice.js
-  - toNumber.js
-  - toString.js
-    
+
+    map.js
+    memorize.js
+    slice.js
+    toNumber.js
+    toString.js
+
 How these files will be tested is described shortly below.
 
 The file countBy.js is tested by giving it inputs of a certain object and asserting whether the
@@ -44,3 +46,10 @@ The file toNumber.js is tested by giving the function different types of objects
 cannot be presented as a number will be tested.
 
 The file toString.js is tested by using the same principle as with toNumber.js file.
+
+
+un-fuck npm dependency hell:
+
+rm -rf node_modules && npm cache clean --force
+rm package-lock.json
+npm install

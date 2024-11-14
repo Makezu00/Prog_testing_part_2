@@ -38,4 +38,4 @@ function countBy(collection, iteratee) {
   }, {})
 }
 
-export default countBy
+module.exports = countBy;

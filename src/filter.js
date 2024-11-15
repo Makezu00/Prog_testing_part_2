@@ -36,4 +36,4 @@ function filter(array, predicate) {
   return result
 }
 
-export default filter
+module.exports = filter;

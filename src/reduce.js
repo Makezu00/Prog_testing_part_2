@@ -41,4 +41,4 @@ function reduce(collection, iteratee, accumulator) {
   return func(collection, iteratee, accumulator, initAccum, baseEach)
 }
 
-export default reduce
+module.exports = reduce;

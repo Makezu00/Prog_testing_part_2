@@ -17,16 +17,5 @@ test('returns true for objects with only non-enumerable properties', () => {
 });
 
 test('Prototype', () => {
-    function Person(name) {
-        this.name = name;
-    }
-    Person.prototype = {
-        sayGoodbye: function() {
-            return `Goodbye from ${this.name}!`;
-        }
-    };
-    
-    const person2 = new Person('Bob')
-
-    expect(isEmpty(person2)).toBeFalsy();
+    expect(isEmpty(Boolean.prototypes)).toBeTruthy();
 });

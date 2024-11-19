@@ -20,3 +20,7 @@ test('Prototype', () => {
     expect(isEmpty(Boolean.prototype)).toBeTruthy();
 });
 
+test('Maps and sets', () => {
+    expect(isEmpty(new Map())).toBeTruthy();
+    expect(isEmpty(new Set())).toBeTruthy();
+});

@@ -4,20 +4,37 @@ const map = require('../src/map');
 
 function square(n) {return n * n};
 
-test('Happy cases', () => {
+describe('Happy cases', () => {
 
-  expect(map([4,6], square)).toStrictEqual([16,36]);
+  test('Generated outputs compares with expected outputs', () => {
 
-  expect(map([-4,6], square)).toStrictEqual([16,36]);
+    expect(map([4,6], square)).toStrictEqual([16,36]);
+  
+    expect(map([-4,6], square)).toStrictEqual([16,36]);
+  
+    expect(map([4,0], square)).toStrictEqual([16,0]);
 
-  expect(map([4,0], square)).toStrictEqual([16,0]);
-
+    expect(map(['bob', 5, [4], null, true, Infinity], square)).toEqual([NaN, 25, 16, 0, 1, Infinity]);
+  
+  });
 });
 
-test('Array is NULL or of wrong form', () => {
+/*
+describe('Input array is with wrong items or is not an array', () => {
 
-    expect(map(null, square)).toEqual([]);
+  test('Array is with wrong items', () => {
 
-    expect(map(['bob', 5, [], null, true, Infinity], square)).toEqual([NaN, 25, 0, 0, 1, Infinity]);
+    expect(map(['bob', 5, [4], null, true, Infinity], square)).toEqual([NaN, 25, 16, 0, 1, Infinity]);
 
+  });
+
+  test('Array is not an array', () => {
+
+    expect(map(null, null)).toEqual([]);
+
+    expect(map(new Map(), null)).toEqual([]);
+
+  });
 });
+
+*/

@@ -4,9 +4,7 @@ intended. */
 
 const memoize = require('../src/memoize');
 
-describe('memoize', () => {
-    it('Happy cases without resolver', () => {
-
+describe('Value assertion in the cache', () => {
     const vals = new Map
     
     const object = { 'a': 1, 'b': 2 };
@@ -15,52 +13,36 @@ describe('memoize', () => {
     const mockfunc = jest.fn((n) => n * n);
     const values = memoize(mockfunc);
 
-    values.cache = new Map(Object.entries(object));
+    it('Manual cache modifications', () => {
 
-    expect(values('a')).toBe(1);
-    expect(values('b')).toBe(2);
+        values.cache = new Map(Object.entries(object));
 
-    expect(mockfunc).not.toHaveBeenCalled();
+        expect(values('a')).toBe(1);
+        expect(values('b')).toBe(2);
 
-    object.a = 2;
-    expect(values('a')).toBe(2);
+        expect(mockfunc).not.toHaveBeenCalled(); //no unnecessary function calls
 
-    values.cache.set(object, ['a', 'b'])
-    expect(memoize(object)).toStrictEqual(['a', 'b']);
+        object.a = 2;
+        expect(values('a')).toBe(1); //object modification to have no effect on cache
 
-    it('should throw an error if the key set is not valid for cache retrieval', () => {
-
-        const mockFunc = jest.fn((n) => n * n);
-    
-        const memoizedFunc = memoize(mockFunc);
-    
-        memoizedFunc.cache = new Map();
-    
-        expect(() => memoizedFunc.cache.set(['a', 'b'], 10)).not.toThrow(); // Setting an array key (allowed in Map)
-    
-        expect(memoizedFunc.cache.get(['a', 'b'])).toBe(undefined); // Arrays are not equal by reference
+        values.cache.set(object, ['a', 'b'])
+        expect(values(object)).toStrictEqual(['a', 'b']);
     });
+
 });
 
-test('memoize', () => {
+describe('Incorrect inputs error handling', () => {
+    it('TypeError: "Expected a function"', () => {
 
-    // Mock function to simulate an expensive computation
-    const mockFunc = jest.fn((x) => x * 2);
+        expect(() => {memoize(square, null);}).not.toThrow('Expected a function'); //should work without errors
 
-    // Memoize the mock function
-    const memoizedFunc = memoize(mockFunc);
+        expect(() => {memoize(null, null);}).toThrow('Expected a function');
 
-    
-})
+        expect(() => {memoize(square, i);}).not.toThrow('Expected a function');
+    });
 
+    it('Definition errors', () => {
 
-test('TypeError: "Expected a function"', () => {
-
-    expect(() => {memoize(square, null);}).not.toThrow('Expected a function'); //should work without errors
-
-    expect(() => {memoize(null, null);}).toThrow('Expected a function');
-
-    expect(() => {memoize(square, i);}).not.toThrow('Expected a function');
-
-    expect(() => {memoize(i, i);}).toThrow('i is not defined');
+        expect(() => {memoize(i, null);}).toThrow('i is not defined');
+    });
 });

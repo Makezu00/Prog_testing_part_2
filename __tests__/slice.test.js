@@ -3,34 +3,55 @@ and incorrect values will be used as well. */
 
 const slice = require('../src/slice');
 
-test('Happy cases', () => {
+describe('Happy cases', () => {
 
-    var array = [1, 2, 3, 4]
-    expect(slice(array, 2)).toStrictEqual([3, 4]);
+    test('Arrays with normal slicing parameters', () => {
 
-    expect(slice(array, 1, 3)).toStrictEqual([2, 3]);
+        var array = [1, 2, 3, 4]
+        expect(slice(array, 2)).toStrictEqual([3, 4]);
+
+        expect(slice(array, 1, 3)).toStrictEqual([2, 3]);
+
+        expect(slice(array, 0)).toStrictEqual([1, 2, 3, 4]);
+    });
+
+    test('function exception handling', () => {
+
+        var array = [1, 2, 3, 4]
+        
+        expect(slice(null, 2)).toStrictEqual([]);
+
+        expect(slice(array, 1, -2)).toStrictEqual([2]);
+
+        expect(slice(array, -1, 2)).toStrictEqual([4, 1, 2, 3]); //bug? putputs "[]"
+    });
 });
 
-test('Arrays with different slicing parameters', () => {
+describe('Incorrect input values (Expected to fail)', () => {
 
-    var array = [1, 2, 3, 4]
-    expect(slice(array, 0)).toStrictEqual([1, 2, 3, 4]);
+    test('Arrays with incorrect slicing parameters', () => {
 
-    expect(slice(array, 5)).toStrictEqual([]);
+        var array = [1, 2, 3, 4]
 
-    expect(slice(array, 3, 2)).toStrictEqual([]);
+        expect(slice(array, 5)).toStrictEqual([]);
+        
+        expect(slice(array, 'i')).toStrictEqual([]);
 
-    expect(slice(array, -1)).toStrictEqual([4]);
+        expect(slice(array, null)).toStrictEqual([1, 2, 3, 4]);
 
-});
+        expect(slice(array, 3, 2)).toStrictEqual([]);
 
-test('Negative and incorrect values', () => {
+        expect(slice(array, true)).toStrictEqual([]); //interprets true == 1 (bug?)
+    });
 
-    var array = [true, Infinity, {}]
+    test('Incorrect array values', () => {
 
-    expect(slice(array, 2)).toStrictEqual([{}]);
+        var array = [true, Infinity, {}]
 
-    expect(slice(array, 'i')).toStrictEqual([]);
+        expect(slice(array, 0)).toStrictEqual([true, Infinity, {}]);
 
-    expect(slice(array, true)).toStrictEqual([]); //interprets true == 1 (bug?)
+        expect(slice(array, 'i')).toStrictEqual([]);
+
+        expect(slice(array, true)).toStrictEqual([]); //interprets true == 1 (bug?)
+    });
 });

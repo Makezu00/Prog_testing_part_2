@@ -31,4 +31,4 @@ function every(array, predicate) {
   return true
 }
 
-export default every
+module.exports = every;

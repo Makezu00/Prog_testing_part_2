@@ -33,7 +33,6 @@ the individual elements will be inspected.
 The file isEmpty.js is tested by giving it objects of different types giving each object type a true
 and a false case.
 
-
 The file map.js is tested by simply comparing generated outputs with expected outputs.
 
 The file memoize.js is tested by asserting the values in the cache with a map that has the

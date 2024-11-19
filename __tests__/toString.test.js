@@ -8,7 +8,7 @@ test('Happy cases with different types of objects', () => {
 
     expect(toString([1, 2, 3])).toStrictEqual('1,2,3');
 
-    expect(toString(null)).toStrictEqual('');   //expected '' (bug)
+    expect(toString(null)).toStrictEqual('');   //expected to output '' (bug)
   
   });
 

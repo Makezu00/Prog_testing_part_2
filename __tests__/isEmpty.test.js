@@ -17,5 +17,6 @@ test('returns true for objects with only non-enumerable properties', () => {
 });
 
 test('Prototype', () => {
-    expect(isEmpty(Boolean.prototypes)).toBeTruthy();
+    expect(isEmpty(Boolean.prototype)).toBeTruthy();
 });
+

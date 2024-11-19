@@ -1,10 +1,16 @@
 const filter = require('../src/filter');
 
+const users = [
+    { 'user': 'barney', 'active': true },
+    { 'user': 'fred',   'active': false }
+    ];
+
 test('Happy cases', () => {
-    const users = [
-        { 'user': 'barney', 'active': true },
-        { 'user': 'fred',   'active': false }
-        ];
     expect(filter(users, ({active}) => active))
     .toStrictEqual([{ 'user': 'barney', 'active': true }]);
+});
+
+test('Not happy cases', () => {
+    expect(() => (filter(users, null))).toThrow(TypeError);
+    expect(() => (filter(users, 123))).toThrow(TypeError);
 });

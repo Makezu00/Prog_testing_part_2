@@ -40,6 +40,7 @@
  * // Replace `memoize.Cache`.
  * memoize.Cache = WeakMap
  */
+
 function memoize(func, resolver) {
   if (typeof func !== 'function' || (resolver != null && typeof resolver !== 'function')) {
     throw new TypeError('Expected a function')

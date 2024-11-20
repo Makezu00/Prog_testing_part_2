@@ -2,8 +2,12 @@
 
 const toString = require('../src/toString');
 
-test('Happy cases with different types of objects', () => {
+describe('Happy cases', () => {
 
+  test('Happy cases with different types of objects', () => {
+
+    expect(toString('-0')).toStrictEqual('-0');
+    
     expect(toString(-0)).toStrictEqual('-0');
 
     expect(toString([1, 2, 3])).toStrictEqual('1,2,3');
@@ -11,8 +15,11 @@ test('Happy cases with different types of objects', () => {
     expect(toString(null)).toStrictEqual('');   //expected to output '' (bug)
   
   });
+});
 
-  test('Input Values that cannot be presented as a string', () => {
+describe('Expected to fail', () => {
+
+  test('Input values that shouldnt be able to be presented as a string', () => {
 
     expect(toString(true)).toStrictEqual("true");
 
@@ -20,5 +27,8 @@ test('Happy cases with different types of objects', () => {
 
     expect(toString(Number.MIN_VALUE)).toStrictEqual("5e-324");
 
-    expect(toString({})).toStrictEqual("{}"); // bug?
+    expect(toString([])).toStrictEqual("");
+
+    expect(toString({})).toStrictEqual(""); // kinda bug, outputs "[object Object]"
+  });
 });

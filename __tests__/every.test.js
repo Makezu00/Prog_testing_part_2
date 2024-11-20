@@ -7,7 +7,7 @@ test('Happy cases', () => {
     expect(every(['y', 'y'], String)).toBeTruthy();
 });
 
-test('Less-happy cases', () => {
+test('False values for predicate', () => {
     expect(() => every([1,2,3],'asdasdas')).toThrow(TypeError);
     expect(() => every([1,2,3], null)).toThrow(TypeError);
 });

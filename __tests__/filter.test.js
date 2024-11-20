@@ -10,7 +10,7 @@ test('Happy cases', () => {
     .toStrictEqual([{ 'user': 'barney', 'active': true }]);
 });
 
-test('Not happy cases', () => {
+test('False values for predicate', () => {
     expect(() => (filter(users, null))).toThrow(TypeError);
     expect(() => (filter(users, 123))).toThrow(TypeError);
 });

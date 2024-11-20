@@ -27,4 +27,19 @@ describe('Expected to fail', () => {
 
         expect(toNumber({})).toStrictEqual(NaN);
     });
+
+    /*
+    test('Regex exceptions', () => {
+
+        expect(toString(" 0 ")).toStrictEqual(0);   //leading and trailing whitespace.
+    
+        expect(toString(0x2)).toStrictEqual(2);     //hexadecimal
+    
+        expect(toString(0b10)).toStrictEqual(2);    //binary
+    
+        expect(toString(0O2)).toStrictEqual(2);     //octal
+    
+        expect(toString(root)).toStrictEqual("");   // 'root'
+      });
+    */
 });

@@ -19,7 +19,6 @@ describe('Happy cases', () => {
   });
 });
 
-/*
 describe('Input array is with wrong items or is not an array', () => {
 
   test('Array is with wrong items', () => {
@@ -28,13 +27,14 @@ describe('Input array is with wrong items or is not an array', () => {
 
   });
 
-  test('Array is not an array', () => {
+  test('Array input is not an array', () => {
 
     expect(map(null, null)).toEqual([]);
 
     expect(map(new Map(), null)).toEqual([]);
 
+    expect(map(4, square)).toEqual([undefined]);
+
   });
 });
 
-*/

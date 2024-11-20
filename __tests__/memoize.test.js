@@ -3,17 +3,16 @@ expected results. Incorrect inputs are also tested to prove that the error handl
 intended. */
 
 const memoize = require('../src/memoize');
+   
+const object = { 'a': 1, 'b': 2 };
+const other = { 'c': 3, 'd': 4 };
 
 describe('Value assertion in the cache', () => {
-    const vals = new Map
     
-    const object = { 'a': 1, 'b': 2 };
-    const other = { 'c': 3, 'd': 4 };
-
     const mockfunc = jest.fn((n) => n * n);
     const values = memoize(mockfunc);
 
-    it('Manual cache modifications', () => {
+    test('Manual cache modifications', () => {
 
         values.cache = new Map(Object.entries(object));
 
@@ -32,7 +31,7 @@ describe('Value assertion in the cache', () => {
 });
 
 describe('Incorrect inputs error handling', () => {
-    it('TypeError: "Expected a function"', () => {
+    test('TypeError: "Expected a function"', () => {
 
         expect(() => {memoize(square, null);}).not.toThrow('Expected a function'); //should work without errors
 
@@ -41,7 +40,7 @@ describe('Incorrect inputs error handling', () => {
         expect(() => {memoize(square, i);}).not.toThrow('Expected a function');
     });
 
-    it('Definition errors', () => {
+    test('Definition errors', () => {
 
         expect(() => {memoize(i, null);}).toThrow('i is not defined'); 
     });

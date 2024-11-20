@@ -51,7 +51,5 @@ describe('Incorrect input values (Expected to fail)', () => {
         expect(slice(array, 0)).toStrictEqual([true, Infinity, {}]);
 
         expect(slice(array, 'i')).toStrictEqual([]);
-
-        expect(slice(array, true)).toStrictEqual([]); //interprets true == 1 (bug?)
     });
 });

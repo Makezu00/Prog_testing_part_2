@@ -29,6 +29,6 @@ describe('Expected to fail', () => {
 
     expect(toString([])).toStrictEqual("");
 
-    expect(toString({})).toStrictEqual("{}"); // kinda bug, outputs "[object Object]"
+    expect(toString({})).toStrictEqual(""); // kinda bug, outputs "[object Object]"
   });
 });

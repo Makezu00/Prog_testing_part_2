@@ -43,6 +43,6 @@ describe('Incorrect inputs error handling', () => {
 
     it('Definition errors', () => {
 
-        expect(() => {memoize(i, null);}).toThrow('i is not defined');
+        expect(() => {memoize(i, null);}).toThrow('i is not defined'); 
     });
 });

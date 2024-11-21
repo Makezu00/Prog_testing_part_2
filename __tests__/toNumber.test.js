@@ -17,7 +17,7 @@ describe('Happy cases', () => {
 });
 
 describe('Expected to fail', () => {
-    test('Input Values that cannot be presented as a number', () => {
+    test('Input values that cannot be presented as a number', () => {
 
         expect(toNumber(null)).toStrictEqual(0);
 

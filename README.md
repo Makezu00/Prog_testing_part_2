@@ -16,7 +16,7 @@ Pyry:
     toNumber.js
     toString.js
 
-How these files will be tested is described shortly below.
+**How these files will be tested is described shortly below.**
 
 The file countBy.js is tested by giving it inputs of a certain object and asserting whether the
 count matches the anticipated value.
@@ -48,7 +48,7 @@ cannot be presented as a number will be tested.
 The file toString.js is tested by using the same principle as with toNumber.js file.
 
 
-un-fuck npm dependency hell:
+Suggested commands to solve npm dependency problems:
 
 rm -rf node_modules && npm cache clean --force
 rm package-lock.json

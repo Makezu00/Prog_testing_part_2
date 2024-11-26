@@ -48,7 +48,8 @@ cannot be presented as a number will be tested.
 The file toString.js is tested by using the same principle as with toNumber.js file.
 
 
-Suggested commands to solve npm dependency problems:
+
+**Suggested commands to solve npm dependency problems:**
 
 rm -rf node_modules && npm cache clean --force
 rm package-lock.json
